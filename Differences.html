@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Differences | QWERTY VS. COLEMAK</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<body>
+    <div>
+        <header>
+            <p>QWERTY VS. COLEMAK</p>
+        </header>
+        <!-- Navigation and Content Panel -->
+        <div style="display:flex">
+            <aside>
+                <ul class="nav">
+                    <a href="Introduction.html">INTRODUCTION</a>
+                    <a href="LearnColemak.html">LEARN COLEMAK</a>
+                    <a href="Differences.html">DIFFERENCES</a>
+                    <a href="OurReviews.html">OUR REVIEWS</a>
+                    <a href="OurKeyboard.html">OUR KEYBOARD</a>
+                    <a href="AboutUs.html">ABOUT US</a>
+                </ul>
+            </aside>
+            <main>
+                <h1>DIFFERENCES</h1>
+                <h2>Differences between QWERTY and Colemak keyboard layout</h2>
+                <!-- Table to show the differences of keyboard layout -->
+                <table>
+                    <tr>
+                        <td>QWERTY</td>
+                        <td><img src="img/Diff_qwerty.jpg" width="100%"></td>
+                    </tr>
+                    <tr>
+                        <td>Colemak</td>
+                        <td><img src="img/Diff_colemak.jpg" width="100%"></td>
+                    </tr>
+                </table>
+                <br>
+
+                <h2> Finger movement </h2>
+                <div class="container-iframe">
+                    <!-- Insert video link -->
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/eNeYmr48JUM?si=kU1nLpmkBECRhYXQ" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+                </div>
+                <figcaption>source : https://www.youtube.com/@MarcosRochaTV</figcaption>
+                <br>
+
+                <h2>Typing speed</h2>
+                <div>
+                    <!-- Title of the chart -->
+                    <h4>Time taken to write 100 words (minutes)</h4>
+
+                    <canvas id="myChart" style="width: 80%; max-width: 80%;"></canvas>
+                    <!-- JavaScript to draw a chart for analysizing data -->
+                    <script>
+                        var ctx = document.getElementById("myChart").getContext('2d');
+                        var myChart = new Chart(ctx,{
+                            type: 'bar',
+                            data: {
+                            labels: ["Goh", "Narmatha", "Navaniswary", "Farisha"],
+                            datasets: [{
+                                        label: 'QWERTY',
+                                        data: [1.55, 2.09, 2.06, 2.24],
+                                        backgroundColor: "rgba(153,255,51,1)"
+                                        }, 
+                                    {
+                                        label: 'Colemak',
+                                        data: [4.04, 6.21, 4.49, 6.18],
+                                        backgroundColor: "rgba(255,153,0,1)"
+                                        }]
+                        },
+                        });
+                    </script>
+                </div>
+                <p> This result is gained after <b>one week</b> of us learning typing with Colemak keyboard. <br>
+                    We found that our typing speed when using QWERTY keyboard is faster than Colemak keyboard. </p><br>
+            </main>
+        </div>
+        <footer>
+            <p>Site and study done in fulfilment of course requirements at Multimedia University</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us | QWERTY VS. COLEMAK</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+    <div>
+        <header>
+            <p>QWERTY VS. COLEMAK</p>
+        </header>
+        <!--Navigation and Content Panel-->
+        <div style="display:flex">
+            <aside>
+                <ul class="nav">
+                    <a href="Introduction.html">INTRODUCTION</a>
+                    <a href="LearnColemak.html">LEARN COLEMAK</a>
+                    <a href="Differences.html">DIFFERENCES</a>
+                    <a href="OurReviews.html">OUR REVIEWS</a>
+                    <a href="OurKeyboard.html">OUR KEYBOARD</a>
+                    <a href="AboutUs.html">ABOUT US</a>
+                </ul>
+            </aside>
+            <main class="aboutus">
+                <br>
+                <!-- Class for slideshow -->
+                <div class="slideshow">
+                    <div class="mySlides fade">
+                      <img src="img/group1.png" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img/group2.png" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <img src="img/group3.png" style="width:100%">
+                    </div>
+                    
+                    <!-- Button link to previous/next slide -->
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
+                </div>
+                    
+                <!-- Dots indicator -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                </div>
+                
+                <!-- Javasccript to run the slideshow -->
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex); // display the first slide when the page loads
+                    
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+                    
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+                    
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {
+                            slideIndex = 1; // Wrap around to the first slide
+                        }
+                        if (n < 1) {
+                            slideIndex = slides.length; // Wrap around to the last slide
+                        }
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  // Hide the slide
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" currentDot", ""); // Remove class currentDot
+                        }
+                        slides[slideIndex-1].style.display = "block"; // Current slide is shown
+                        dots[slideIndex-1].className += " currentDot"; 
+                    }
+                </script>
+
+                <br><br>
+
+                <!-- Divided class into 2-column layout-->
+                <div class="aboutus-row">
+                    <div class="aboutus-col">
+                        <img src="img/goh.png">
+                        <ul class="ul1-custom">
+                            <li>GOH QIAN YING</li>
+                            <ul class="ul2-custom">
+                                <li>Bukit Mertajam, Penang</li>
+                            </ul>  
+                        </ul>
+                        <br>
+                        <img src="img/narmatha.png">
+                        <ul class="ul1-custom">
+                            <li>NARMATHA A/P PAARTIBAN</li>
+                            <ul class="ul2-custom">
+                                <li>Serdang, Selangor</li>
+                            </ul>    
+                        </ul>
+                    </div>
+
+                    <div class="aboutus-col">
+                        <img src="img/navanis.png">
+                        <ul class="ul1-custom">
+                            <li>NAVANISWARY A/P MURUGIAH</li>
+                            <ul class="ul2-custom">
+                                <li>Serdang, Selangor</li>
+                            </ul>  
+                        </ul>
+
+                        <br>
+                        <img src="img/farisha.png">
+                        <ul class="ul1-custom">
+                            <li>NUR FARISHA HANI BINTI MOHD RIZAL</li>
+                            <ul class="ul2-custom">
+                                <li>Port Klang, Selangor</li>
+                            </ul>    
+                        </ul>
+                    </div>
+
+                </div>         
+            </main>
+        </div>
+        <footer>
+            <p>Site and study done in fulfilment of course requirements at Multimedia University</p>
+        </footer>
+    </div>
+</body>
+</html>
